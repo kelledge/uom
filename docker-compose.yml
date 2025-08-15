@@ -1,0 +1,11 @@
+services:
+  dev:
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+      target: dev
+    command: sleep infinity
+    stop_grace_period: 1s
+    stop_signal: "SIGKILL"
+    volumes:
+      - .:/app

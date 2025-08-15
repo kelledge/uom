@@ -1,0 +1,18 @@
+// https://code.visualstudio.com/docs/remote/containers#_devcontainerjson-reference
+{
+    "dockerComposeFile": "../docker-compose.yml",
+    "service": "dev",
+    "workspaceFolder": "/app",
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"golang.Go"
+			],
+			"settings": {
+                "go.useLanguageServer": true,
+				"git.openRepositoryInParentFolders": "always"
+			}
+		}
+	},
+    "remoteUser": "root"
+}
