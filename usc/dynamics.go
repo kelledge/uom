@@ -4,6 +4,7 @@ import (
 	"github.com/kelledge/uom"
 	"github.com/kelledge/uom/dim"
 	"github.com/kelledge/uom/si"
+	"github.com/kelledge/uom/std"
 )
 
 var (
@@ -49,7 +50,7 @@ var (
 	// SlugMass: mass unit where 1 lbf accelerates 1 slug at 1 ft/s^2
 	SlugMass = uom.DeriveUnit[dim.Mass]("slug",
 		uom.U(PoundsForce),
-		uom.U(si.Second).Pow(2),
+		uom.U(std.Second).Pow(2),
 		uom.U(Foot).Per(),
 	)
 )

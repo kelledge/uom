@@ -4,11 +4,12 @@ import (
 	"testing"
 
 	"github.com/kelledge/uom"
+	"github.com/kelledge/uom/dim"
 	"github.com/stretchr/testify/require"
 )
 
 func TestUnitTermOperations(t *testing.T) {
-	u := uom.DefineUnit[uom.Length]("inch", 0.0254)
+	u := uom.DefineUnit[dim.Length]("inch", 0.0254)
 
 	t.Run("test per", func(t *testing.T) {
 		inchPer := uom.U(u).Per()

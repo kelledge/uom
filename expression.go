@@ -87,6 +87,10 @@ func (e Expr[T]) As(dest Unit[T]) Quantity[T] {
 	return As(e, dest)
 }
 
+func (e Expr[T]) AsCanonical() Quantity[T] {
+	return AsCanonical[T](e)
+}
+
 func As[T Dimension](n ExprNode, dest Unit[T]) Quantity[T] {
 	if n.Dimension() != dest.Dimension() {
 		panic(fmt.Sprintf("dimension mismatch: expression %q, destination %q", n.Dimension(), dest.Dimension()))
@@ -102,4 +106,13 @@ func As[T Dimension](n ExprNode, dest Unit[T]) Quantity[T] {
 	}
 
 	return q
+}
+
+func AsCanonical[T Dimension](n ExprNode) Quantity[T] {
+	var t T
+	t.Dimension()
+	// use dimension to look up in the registry for the canonical unit of
+	// this specific dimension
+
+	panic("unimplemented")
 }

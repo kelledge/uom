@@ -40,3 +40,10 @@ var (
 		uom.U(Inch).Per(),
 	)
 )
+
+var (
+	PSI = uom.DeriveUnit[dim.Pressure]("psi",
+		uom.U(PoundsForce),
+		uom.U(InchSquared).Per(),
+	)
+)

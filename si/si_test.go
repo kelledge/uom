@@ -23,9 +23,4 @@ func TestSpotCheck(t *testing.T) {
 		require.Equal(t, dim.Mass{}.Dimension(), si.Gram.Dimension(), "Gram should have Mass dimension")
 		require.Equal(t, 0.001, si.Gram.ConversionFactor(), "Gram should be 1e-3 kg")
 	})
-
-	t.Run("Millisecond", func(t *testing.T) {
-		require.Equal(t, dim.Time{}.Dimension(), si.Millisecond.Dimension(), "Millisecond should have Time dimension")
-		require.Equal(t, 0.001, si.Millisecond.ConversionFactor(), "Millisecond should be 1e-3 s")
-	})
 }
