@@ -1,0 +1,45 @@
+name: CI
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  ci:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      # Build once — this registers the dev image in the runner's Docker cache
+      - name: Build dev image
+        run: docker compose build dev
+
+      # Now reuse it across steps
+      - name: Run format check
+        run: docker compose run --rm dev make test-fmt
+
+      - name: Run lint
+        run: docker compose run --rm dev make test-lint
+
+      - name: Run unit tests
+        run: docker compose run --rm dev make test-unit
+
+      # Tidy up
+      - name: Cleanup
+        if: always()
+        run: docker compose down --remove-orphans
+
+      - name: Upload JUnit report
+        uses: actions/upload-artifact@v4
+        with:
+          name: junit-report
+          path: reports/*.xml
+
+      - name: Publish test report to Actions UI
+        uses: mikepenz/action-junit-report@v4
+        with:
+          report_paths: 'reports/*.xml'

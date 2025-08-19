@@ -5,16 +5,16 @@ import "fmt"
 var DefaultRegistry *Registry
 
 type Registry struct {
-	byDim     map[DimInt][]UnitTerm
-	byToken   map[string]tokenRef
-	canonical map[DimInt]int
-	frozen    bool
+	// byDim     map[DimInt][]UnitTerm
+	// byToken   map[string]tokenRef
+	// canonical map[DimInt]int
+	// frozen    bool
 }
 
-type tokenRef struct {
-	dim   DimInt
-	index int
-}
+// type tokenRef struct {
+// 	dim   DimInt
+// 	index int
+// }
 
 func NewRegistry() *Registry {
 	return &Registry{}
