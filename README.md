@@ -1,5 +1,7 @@
 # Go Units of Measure
 
+[![Go Reference](https://pkg.go.dev/badge/github.com/kelledge/uom.svg)](https://pkg.go.dev/github.com/kelledge/uom)
+
 **Type-safe, expressive, and efficient handling of physical quantities in Go.**  
 
 **NOTE: Very much still in active development. API refinements are likely.**
