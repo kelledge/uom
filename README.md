@@ -1,6 +1,7 @@
 # Go Units of Measure
 
 [![Go Reference](https://pkg.go.dev/badge/github.com/kelledge/uom.svg)](https://pkg.go.dev/github.com/kelledge/uom)
+[![CI](https://github.com/kelledge/uom/actions/workflows/ci.yml/badge.svg)](https://github.com/kelledge/uom/actions/workflows/ci.yml)
 
 **Type-safe, expressive, and efficient handling of physical quantities in Go.**  
 
@@ -178,7 +179,19 @@ See: https://www.cs.utexas.edu/~novak/units95.html and related works.
   1. Affine Conversions: Accomdates Celsius and Fahrenheit
   2. Serialization: It should be trivial to add MarshalText/UnmarshalText to uom.Quantity[T Dimension]
   3. Aliases: "foot", "feet", "ft"
-  4. Registry: Again trivial. Coming soon.
+  4. Registry:
+
+---
+
+## Horizon
+Work that is further off, but has promise to be extremely useful.
+
+### Leverage the Existing Work of [QUDT](https://www.qudt.org/pages/HomePage.html)
+
+Write a go:generate tool that converts the library of maintained dimension vectors and units directly to the `dim`/`si`/`usc` packages.
+
+There is already a generally accept body that maintains this information. Use it.
+
 
 ---
 
