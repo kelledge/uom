@@ -1,0 +1,13 @@
+# See: https://github.com/golangci/golangci-lint/blob/HEAD/.golangci.reference.yml
+
+version: "2"
+
+output:
+  text:
+    path: stdout
+    colors: true
+    print-issued-lines: true
+    print-linter-name: true
+  junit-xml:
+    path: "${config-path}/reports/lint.xml"
+    extended: false
