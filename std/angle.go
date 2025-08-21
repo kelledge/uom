@@ -6,6 +6,6 @@ import (
 )
 
 var (
-	Radian = uom.DefineUnit[dim.Dimensionless]("rad", 1)
-	Degree = uom.DeriveUnit[dim.Dimensionless]("deg", uom.U(Radian).DivScalar(180))
+	Radian = uom.DefineUnit[dim.Angle]("rad", 1)
+	Degree = uom.DeriveUnit[dim.Angle]("deg", uom.U(Radian).DivScalar(180))
 )

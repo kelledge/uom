@@ -1,6 +1,6 @@
 package uom
 
-// Quantity[T]: a value paired with its unit, both statically dimensioned.
+// Represents
 type Quantity[T Dimension] struct {
 	value float64 // scalar in the specified unit
 	unit  Unit[T] // the unit; type-checked to match T at compile time

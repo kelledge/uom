@@ -54,3 +54,8 @@ func (Area) Dimension() uom.DimInt {
 	return uom.NewDimInt(uom.DimensionSpec{Length: 2})
 }
 func (Area) Name() string { return "Area" }
+
+type Angle struct{}
+
+func (Angle) Dimension() uom.DimInt { return uom.NewDimInt(uom.DimensionSpec{}) }
+func (Angle) Name() string          { return "Angle" }
