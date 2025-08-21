@@ -2,6 +2,7 @@
 
 [![Go Reference](https://pkg.go.dev/badge/github.com/kelledge/uom.svg)](https://pkg.go.dev/github.com/kelledge/uom)
 [![CI](https://github.com/kelledge/uom/actions/workflows/ci.yml/badge.svg)](https://github.com/kelledge/uom/actions/workflows/ci.yml)
+[![Go Report Card](https://goreportcard.com/badge/github.com/kelledge/uom)](https://goreportcard.com/report/github.com/kelledge/uom)
 
 **Type-safe, expressive, and efficient handling of physical quantities in Go.**  
 
