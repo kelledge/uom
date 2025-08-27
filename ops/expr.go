@@ -7,8 +7,7 @@ import (
 	"github.com/kelledge/uom"
 )
 
-// ExprNode is the minimal interface consumed by arithmetic operations.
-// Both uom.Quantity[T] and Expr[T] implement this interface.
+// REDEFINE of uom.ExprNode
 type ExprNode interface {
 	Dimension() uom.DimInt // Dimension returns the physical dimension of the value, encoded as a DimInt.
 	Canonical() float64    // Canonical returns the value scaled into canonical (usually SI) units.

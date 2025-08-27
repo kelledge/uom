@@ -3,10 +3,12 @@ package ops_test
 import (
 	"testing"
 
+	"github.com/kelledge/uom"
 	"github.com/kelledge/uom/dim"
 	"github.com/kelledge/uom/ops"
 	"github.com/kelledge/uom/si"
 	"github.com/kelledge/uom/std"
+	"github.com/kelledge/uom/usc"
 	"github.com/stretchr/testify/require"
 )
 
@@ -130,5 +132,17 @@ func TestExpr(t *testing.T) {
 	t.Run("dimension times its inverse is dimensionless", func(t *testing.T) {
 		actual := ops.E[dim.Dimensionless](oneM).Inv().Mul(oneM).As(std.Scalar).Value()
 		require.Equal(t, 1.0, actual)
+	})
+
+	t.Run("can call canonical to not hardcode units", func(t *testing.T) {
+		uom.DefaultRegistry.UseCanonicalSet(si.MKS)
+
+		in := usc.Inch.Of(1)
+		ft := usc.Foot.Of(1)
+
+		a := ops.E[dim.Length](in).Mul(std.Scalar.Of(36)).AsCanonical().Value()
+		b := ops.E[dim.Length](ft).Mul(std.Scalar.Of(3)).AsCanonical().Value()
+
+		require.InDelta(t, a, b, 1e-12)
 	})
 }
